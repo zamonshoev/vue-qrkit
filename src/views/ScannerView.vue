@@ -1,15 +1,15 @@
 <template>
-  <div class="container mx-auto">
-    <div class="flex flex-wrap gap-10 px-64 pt-24 max-xl:px-8 max-lg:flex-col">
-      <h1
-        class="min-w-full text-center text-5xl font-bold transition-all duration-700 max-md:text-3xl"
-        :class="visible.title ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'"
-      >
-        Scan QR-code
-      </h1>
+  <div class="container mx-auto px-4 py-16 sm:px-8 xl:px-64">
+    <h1
+      class="mb-10 text-center text-4xl font-bold transition-all duration-700 sm:text-5xl"
+      :class="visible.title ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'"
+    >
+      Scan QR-code
+    </h1>
 
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-10">
       <div
-        class="flex max-w-lg flex-1/2 flex-col gap-5 transition-all duration-700"
+        class="w-full flex-col gap-5 transition-all duration-700 lg:max-w-lg"
         :class="visible.left ? 'translate-x-0 opacity-100' : '-translate-x-6 opacity-0'"
       >
         <div class="rounded-xl border border-gray-300 p-6 shadow-xl">
@@ -110,7 +110,7 @@
           v-if="!result"
           @click="handleStartScan"
           :disabled="scanning || activeTab === 'Upload Image File'"
-          class="rounded-lg bg-black py-4 text-sm text-white transition hover:bg-gray-800 active:scale-[0.99] disabled:opacity-50"
+          class="mt-5 w-full rounded-lg bg-black py-4 text-sm text-white transition hover:bg-gray-800 active:scale-[0.99] disabled:opacity-50"
         >
           <span v-if="scanning" class="flex items-center justify-center gap-2">
             <svg
@@ -136,12 +136,12 @@
       </div>
 
       <div
-        class="flex max-w-sm flex-1/2 flex-col gap-4 transition-all duration-700 max-lg:max-w-full max-lg:pt-0"
+        class="w-full flex-col gap-4 transition-all duration-700 lg:max-w-sm"
         :class="visible.right ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'"
       >
         <div
           v-if="!result"
-          class="flex min-h-56 flex-1 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-gray-300 p-10 text-center"
+          class="flex min-h-56 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-gray-300 p-10 text-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +160,7 @@
           <p class="text-sm text-gray-400">Result will appear here</p>
         </div>
 
-        <div v-else class="flex flex-1 flex-col gap-3">
+        <div v-else class="flex flex-col gap-3">
           <div class="rounded-2xl border border-gray-300 bg-white p-6 shadow-xl">
             <p class="mb-3 text-xs tracking-widest text-gray-400 uppercase">Decoded result</p>
             <p class="font-mono text-sm leading-relaxed break-all text-gray-900">{{ result }}</p>
