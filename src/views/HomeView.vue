@@ -70,7 +70,7 @@
   import QRCode from 'qrcode'
   import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-  const QR_CONTENT = 'https://github.com/zamonshoev'
+  const QR_CONTENT = 'https://vue-qrkit.netlify.app'
 
   const size = ref(21)
   const cells = ref([])
